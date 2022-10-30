@@ -45,7 +45,9 @@ class MainActivity : AppCompatActivity() {
             adapter.addItem(it)
 
         }
+        mViewModel.isloding.observe(this) { isLoding ->
+            if (isLoding)
+                binding.progresBar.visibility = View.VISIBLE
+        }
     }
-
-
 }
